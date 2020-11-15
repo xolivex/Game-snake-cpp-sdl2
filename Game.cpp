@@ -2,17 +2,10 @@
 #include "Game.h"
 #include "Objects.h"
 
-
 Objects * cobra;
 Objects * maca;
 Objects * calda;
 Objects * background;
-
-
-
-
-
-
 
 
 Game::Game()
@@ -47,26 +40,10 @@ void Game::init(const char* title, int width, int heigth, bool fullscreen)
         calda = new Objects();
         background = new Objects();
         
-        
         cobra->objInit("assets/cobra.png");
         maca->objInit("assets/maca.png");
         calda->objInit("assets/calda.png");
         background->objInit("assets/background.png");
-        
-
-        
-
-        
-        
-        
-        
-
-        
-        
-
-        
-        
-        
 
         right = true;
         running = true;
@@ -178,7 +155,6 @@ void Game::update()
     }
     //----
     
-    
     //quando come a maca
     if(snakeX == macaX && snakeY == macaY)
     {
@@ -193,8 +169,6 @@ void Game::update()
             score1 = 0;
             score2 +=1;
         }
-
-        
 
         for(int i = 0;i < nCaldas; i++)
         {
@@ -252,20 +226,9 @@ void Game::update()
         }
     }
 
-    
-
-    
-
-    
     background->objUpdate(backgx,backgy,backw,backh);
     cobra->objUpdate(snakeX,snakeY,snakeW,snakeH);
     maca->objUpdate(macaX,macaY,macaW,macaH);
-     
-    
-        
-    
-    
-    
      
 }
 
@@ -273,8 +236,6 @@ void Game::draw()
 {
     SDL_SetRenderDrawColor(renderer,255,255,255,255);
     SDL_RenderClear(renderer);
-    
-
     background->objDraw();
 
     for(int i = 0;i < nCaldas;i++)
@@ -282,18 +243,14 @@ void Game::draw()
         calda->objUpdate(caldaX[i],caldaY[i],caldaW,caldaH);
         calda->objDraw();
     }
-    
-    cobra->objDraw();
 
+    cobra->objDraw();
     maca->objDraw();
-   
     SDL_RenderPresent(renderer);
 }
 
 void Game::clean()
 {
-    
-
     SDL_DestroyRenderer(renderer);
     SDL_DestroyWindow(window);
     SDL_Quit();
