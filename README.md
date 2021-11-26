@@ -1,5 +1,6 @@
 # Game-snake-cpp-sdl2
 Snake meu primeiro jogo em sdl2 e cpp
+
 linux:
 Você precisa ter sdl2 instalado no linux junto com sdl2_image
 comando para compilar no linux é g++ *.cpp -o snake -lSDL2 -lSDL2_image
