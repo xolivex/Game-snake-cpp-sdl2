@@ -5,9 +5,6 @@ const int heigth = 640;
 
 Game * game;
 
-SDL_Renderer * Game::renderer = nullptr;
-
-
 int main(int argc,char* argv[])
 {
     game = new Game();
@@ -21,5 +18,6 @@ int main(int argc,char* argv[])
         
     }
     game->clean();
+    delete game;
     return 0;
 }

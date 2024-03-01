@@ -67,7 +67,7 @@ public:
     void draw();
     void clean();
     bool isRunning() { return running; }
-    static SDL_Renderer * renderer;
+    SDL_Renderer * renderer;
 };
 
 //----------------------------

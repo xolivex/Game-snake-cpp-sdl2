@@ -241,11 +241,11 @@ void Game::draw()
     for(int i = 0;i < nCaldas;i++)
     {
         calda->objUpdate(caldaX[i],caldaY[i],caldaW,caldaH);
-        calda->objDraw();
+        calda->objDraw(renderer);
     }
 
-    cobra->objDraw();
-    maca->objDraw();
+    cobra->objDraw(renderer);
+    maca->objDraw(renderer);
     SDL_RenderPresent(renderer);
 }
 

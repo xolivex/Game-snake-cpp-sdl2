@@ -4,7 +4,7 @@
 
 Objects::Objects()
 {}
-Objects::~Objects()
+virtual Objects::~Objects()
 {}
 void Objects::objInit(const char * texturesheet)
 {
@@ -19,9 +19,9 @@ void Objects::objUpdate(float x, float y, float w, float h)
     dest.w = w; 
 }
 
-void Objects::objDraw()
+void Objects::objDraw(SDL_Renderer & render)
 {
-    SDL_RenderCopy(Game::renderer, objTexture, NULL, &dest);
+    SDL_RenderCopy(render, objTexture, NULL, &dest);
 }
 
 

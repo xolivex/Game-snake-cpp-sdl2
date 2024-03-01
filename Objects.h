@@ -11,11 +11,11 @@ private:
   
 public:
    Objects();
-   ~Objects();
+   virtual ~Objects();
    
    void objInit(const char * texturesheet);
    void objUpdate(float x, float y, float w, float h);
-   void objDraw();
+   void objDraw(SDL_Renderer & render);
    
  
 };
